@@ -167,23 +167,23 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="app-frame text-slate-100">
+  <div class="app-frame min-w-0 overflow-hidden text-slate-100">
     <!-- Constant-height header. The mobile menu is an overlay, so the bar never expands. -->
     <header
       class="site-header relative z-50 flex h-[68px] shrink-0 items-center border-b border-white/10 bg-[#080e19]/95 backdrop-blur-xl"
     >
       <div
-        class="mx-auto flex w-full max-w-[1450px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12"
+        class="mx-auto flex w-full min-w-0 max-w-[1450px] items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:gap-4 sm:px-8 lg:px-12"
       >
         <button
           type="button"
-          class="group inline-flex min-w-0 items-center gap-3 text-left"
+          class="group inline-flex min-w-0 flex-1 items-center gap-2 text-left sm:gap-3 lg:flex-none"
           aria-label="Go to Core Values"
           @click="jumpTo('values')"
         >
           <!-- Complete Caraga State University Logo -->
           <span
-            class="flex h-[58px] w-[58px] shrink-0 items-center justify-center"
+            class="flex h-12 w-12 shrink-0 items-center justify-center sm:h-[58px] sm:w-[58px]"
           >
             <img
               :src="csuLogo"
@@ -195,12 +195,12 @@ useSeoMeta({
           </span>
           <span class="block min-w-0 leading-none">
             <span
-              class="block truncate text-[16px] font-extrabold tracking-[-.04em]"
+              class="block truncate text-[14px] font-extrabold tracking-[-.04em] min-[360px]:text-[16px]"
             >
               MySchool<span class="text-emerald-400">.next</span>
             </span>
             <span
-              class="mt-1.5 block truncate text-[9px] font-semibold tracking-[.23em] text-slate-400"
+              class="mt-1.5 block truncate text-[8px] font-semibold tracking-[.12em] text-slate-400 sm:text-[9px] sm:tracking-[.23em]"
             >
               CSU · STUDENT CONCEPT
             </span>
@@ -249,7 +249,7 @@ useSeoMeta({
       </div>
       <nav
         v-if="mobileMenuOpen"
-        class="absolute left-0 right-0 top-full border-b border-white/10 bg-[#0b1423] p-4 shadow-2xl lg:hidden"
+        class="absolute left-0 right-0 top-full max-h-[calc(100dvh-112px)] overflow-y-auto border-b border-white/10 bg-[#0b1423] p-4 shadow-2xl lg:hidden"
         aria-label="Mobile navigation"
       >
         <button
@@ -276,7 +276,7 @@ useSeoMeta({
     <main
       ref="pageScroller"
       id="page-scroll"
-      class="relative min-h-0 flex-1 overflow-y-auto overscroll-contain scroll-smooth"
+      class="relative min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain scroll-smooth"
     >
       <!-- STYLE 01 / Core values: bold neon hero + three feature tiles -->
       <section
@@ -290,9 +290,9 @@ useSeoMeta({
           class="pointer-events-none absolute -left-56 top-40 h-[500px] w-[500px] rounded-full bg-cyan-600/[.08] blur-[120px]"
         ></div>
         <div
-          class="relative mx-auto max-w-[1310px] px-5 pb-19 pt-12 sm:px-8 lg:px-10 lg:pt-[76px]"
+          class="relative mx-auto w-full min-w-0 max-w-[1310px] px-4 pb-14 pt-10 min-[360px]:px-5 sm:px-8 sm:pb-19 lg:px-10 lg:pt-[76px]"
         >
-          <div class="grid items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
+          <div class="grid min-w-0 items-center gap-9 sm:gap-14 lg:grid-cols-[1.05fr_.95fr]">
             <div class="relative z-10">
               <div class="section-kicker">
                 <span
@@ -301,17 +301,17 @@ useSeoMeta({
                 CARAGA STATE UNIVESITY - MySchool
               </div>
               <h1
-                class="mt-7 text-[clamp(3.2rem,7vw,6.75rem)] font-black leading-[.98] tracking-[-.085em] text-[#eef8f5]"
+                class="mt-6 text-[clamp(2.4rem,10.8vw,6.75rem)] font-black leading-[1.05] tracking-[-.07em] text-[#eef8f5] sm:mt-7 sm:leading-[.98] sm:tracking-[-.085em]"
               >
                 A smarter<br /><span class="headline-gradient">campus</span
                 ><br />starts here<span class="text-emerald-400">.</span>
               </h1>
               <p
-                class="mt-7 max-w-[525px] text-[15px] leading-8 text-[#a9b8c7] sm:text-[17px]"
+                class="mt-6 max-w-[525px] text-[14px] leading-7 text-[#a9b8c7] sm:mt-7 sm:text-[17px] sm:leading-8"
               >
                 Brgy. Ampayon, Butuan City, 8600 Agusan Del Norte Philippines
               </p>
-              <div class="mt-8 flex flex-wrap gap-3">
+              <div class="mt-7 flex flex-wrap gap-3 max-[359px]:[&>button]:w-full">
                 <button
                   class="action-main"
                   type="button"
@@ -327,7 +327,7 @@ useSeoMeta({
                 </button>
               </div>
               <div
-                class="mt-12 flex items-center gap-3 text-[11px] font-semibold tracking-[.15em] text-slate-500"
+                class="mt-8 flex items-center gap-3 text-[10px] font-semibold leading-5 tracking-[.07em] text-slate-500 sm:mt-12 sm:text-[11px] sm:tracking-[.15em]"
               >
                 <span class="h-px w-9 bg-emerald-400"></span> College of
                 Computing and Information Sciences
@@ -335,7 +335,7 @@ useSeoMeta({
             </div>
 
             <div
-              class="relative mx-auto w-full max-w-[550px]"
+              class="relative mx-auto min-w-0 w-full max-w-[550px]"
               aria-label="Decorative MySchool student system preview"
             >
               <div
@@ -345,7 +345,7 @@ useSeoMeta({
                 class="terminal-shell relative overflow-hidden rounded-3xl border border-white/[.13] bg-[#0d1928]/95 shadow-[0_36px_90px_rgba(0,0,0,.45)]"
               >
                 <div
-                  class="flex h-12 items-center justify-between border-b border-white/10 px-5"
+                  class="flex h-12 min-w-0 items-center justify-between gap-2 border-b border-white/10 px-3 sm:px-5"
                 >
                   <div class="flex gap-2">
                     <span
@@ -358,11 +358,11 @@ useSeoMeta({
                       class="h-[9px] w-[9px] rounded-full bg-[#30d38b]"
                     ></span>
                   </div>
-                  <span class="font-mono text-[10px] text-slate-500"
+                  <span class="min-w-0 truncate font-mono text-[9px] text-slate-500 sm:text-[10px]"
                     >csu-student-workspace / terminal</span
                   ><AppIcon name="terminal" :size="17" />
                 </div>
-                <div class="space-y-6 p-6 sm:p-8">
+                <div class="min-w-0 space-y-5 p-4 sm:space-y-6 sm:p-8">
                   <div class="font-mono text-xs leading-7">
                     <span class="text-emerald-400">student@csu</span
                     ><span class="text-slate-500"> : </span
@@ -438,7 +438,7 @@ useSeoMeta({
               </div>
             </div>
           </div>
-          <div class="mt-24 flex flex-wrap items-end justify-between gap-3">
+          <div class="mt-16 flex flex-wrap items-end justify-between gap-3 sm:mt-24">
             <div>
               <div class="section-kicker">01 / OUR FOUNDATION</div>
               <h2
@@ -506,7 +506,7 @@ useSeoMeta({
           class="relative mx-auto max-w-[1310px] px-5 py-[5.5rem] sm:px-8 lg:px-10 lg:py-[7.5rem]"
         >
           <div class="section-kicker">02 / THE UNIVERSITY</div>
-          <div class="mt-6 grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-20">
+          <div class="mt-6 grid min-w-0 gap-9 sm:gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-20">
             <div>
               <h2
                 class="max-w-xl text-[clamp(2.7rem,5.8vw,5.7rem)] font-black leading-[1.04] tracking-[-.075em]"
@@ -614,7 +614,7 @@ useSeoMeta({
         class="section-panel announcement-pattern relative border-b border-white/[.07] bg-[#08121d]"
       >
         <div
-          class="mx-auto max-w-[1310px] px-5 py-[5.5rem] sm:px-8 lg:px-10 lg:py-[7.5rem]"
+          class="mx-auto w-full min-w-0 max-w-[1310px] px-4 py-14 min-[360px]:px-5 sm:px-8 sm:py-[5.5rem] lg:px-10 lg:py-[7.5rem]"
         >
           <div class="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -738,7 +738,7 @@ useSeoMeta({
             shortcuts—designed as a demo, not connected to real enrollment
             records.
           </p>
-          <div class="mt-10 grid gap-5 lg:grid-cols-[1fr_.85fr]">
+          <div class="mt-10 grid min-w-0 gap-5 lg:grid-cols-[1fr_.85fr]">
             <div
               class="overflow-hidden rounded-[25px] border border-white/10 bg-[#142137] shadow-[0_24px_70px_rgba(0,0,0,.25)]"
             >
@@ -865,15 +865,15 @@ useSeoMeta({
       class="site-footer z-40 flex h-11 shrink-0 items-center border-t border-white/10 bg-[#080e19]"
     >
       <div
-        class="mx-auto flex w-full max-w-[1450px] items-center justify-between gap-2 px-5 text-[10px] text-slate-400 sm:px-8 lg:px-12"
+        class="mx-auto flex w-full min-w-0 max-w-[1450px] items-center justify-center gap-2 px-3 text-[10px] text-slate-400 sm:justify-between sm:px-8 lg:px-12"
       >
-        <span class="truncate"
-          >© 2026 · Caraga State Univesity
+        <span class="whitespace-nowrap text-center sm:truncate sm:text-left"
+          >© 2026 · Caraga State University
           <span class="hidden sm:inline">. All Rights Reserved.</span></span
         ><span
           class="hidden items-center gap-2 font-mono tracking-[.10em] text-emerald-300 sm:flex"
           ><span class="status-dot"></span> NIGHT TECH / ONLINE</span
-        ><span class="truncate text-right"
+        ><span class="hidden min-w-0 truncate text-right md:block"
           >College of Computing and Information Sciences</span
         >
       </div>
